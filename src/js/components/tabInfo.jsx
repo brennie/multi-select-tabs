@@ -8,8 +8,8 @@ import React from "react";
  * for the tab as well.
  */
 const TabInfo = function TabInfo(props) {
-  const { active, onClick, onSelectionChanged, tabInfo } = props;
-  const { favIconUrl, id, selected, title } = tabInfo;
+  const { active, onClick, onSelectionChanged, info } = props;
+  const { favIconUrl, id, selected, title } = info;
 
   const className = active ? "active" : null;
 
@@ -32,7 +32,7 @@ TabInfo.propTypes = {
   active: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   onSelectionChanged: PropTypes.func.isRequired,
-  tabInfo: PropTypes.shape({
+  info: PropTypes.shape({
     favIconUrl: PropTypes.string,
     id: PropTypes.number.isRequired,
     selected: PropTypes.bool.isRequired,
